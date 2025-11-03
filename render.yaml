@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: analise-cargas-martins
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: PORT
+        value: 10000
+    autoDeploy: false
